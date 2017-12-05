@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Beranda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+
+    <img src="../../assets/img/gambar.png"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        Cake Manis Sedap {{rasa}}
+      </ion-card-title>
+      <p>
+        Es krim cokelat dengan campuran susu di dalamnya yang menjadikan es krim lembut dan mudah lumer di mulut.
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="success" icon-start>
+          <ion-icon name='star'></ion-icon>
+          Favorite
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button clear small color="success" icon-start (click)="lihatDetail('Cake Manis Sedap')">
+          <ion-icon name='eye'></ion-icon>
+          Selengkapnya
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-card>
+  <ion-card>
+    
+        <img src="../../assets/img/gambar.png"/>
+    
+        <ion-card-content>
+          <ion-card-title>
+            Es Krim {{rasa}}
+          </ion-card-title>
+          <p>
+            Es krim cokelat dengan campuran susu di dalamnya yang menjadikan es krim lembut dan mudah lumer di mulut.
+          </p>
+        </ion-card-content>
+    
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="success" icon-start>
+              <ion-icon name='star'></ion-icon>
+              Favorite
+            </button>
+          </ion-col>
+          <ion-col text-center>
+            <button ion-button clear small color="success" icon-start (click)="lihatDetail('Es Krim Sedap')">
+              <ion-icon name='eye'></ion-icon>
+              Selengkapnya
+            </button>
+          </ion-col>
+    
+        </ion-row>
+    
+      </ion-card>
+
+</ion-content>

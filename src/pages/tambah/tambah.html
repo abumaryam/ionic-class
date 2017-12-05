@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tambah Kategori</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup] = "formku" (ngSubmit)="saveEntry()">
+    <ion-list>
+        
+          <ion-item>
+            <ion-label stacked>Nama Kategori</ion-label>
+            <ion-input type="text" 
+            formControlName="kategori"
+            [(ngModel)]="namaKategori"></ion-input>
+          </ion-item>
+        
+          
+          <div padding>
+            <button ion-button color="primary" block>Tambahkan</button>
+          </div>
+        </ion-list>
+  </form>
+</ion-content>

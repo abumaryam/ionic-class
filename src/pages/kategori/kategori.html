@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Kategori</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-fab right bottom>
+  <button ion-fab color="red" (click)="tambahKategori()"><ion-icon name="add"></ion-icon></button>
+  
+</ion-fab>
+<ion-list>
+    <button ion-item *ngFor="let item of kategori">
+      {{ item.nama_kategori }}
+    </button>
+  </ion-list>
+
+</ion-content>
