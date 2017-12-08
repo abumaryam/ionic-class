@@ -9,20 +9,18 @@
 
 
 <ion-content padding>
-  <form [formGroup] = "formku" (ngSubmit)="saveEntry()">
     <ion-list>
+      <form (ngSubmit)="onSubmit()">
         
           <ion-item>
             <ion-label stacked>Nama Kategori</ion-label>
-            <ion-input type="text" 
-            formControlName="kategori"
-            [(ngModel)]="namaKategori"></ion-input>
+            <ion-input type="text" [(ngModel)]="kategori.nama_kategori" name="nama_kategori"></ion-input>
           </ion-item>
         
           
           <div padding>
             <button ion-button color="primary" block>Tambahkan</button>
           </div>
-        </ion-list>
-  </form>
+        </form>
+      </ion-list>
 </ion-content>

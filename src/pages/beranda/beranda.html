@@ -8,13 +8,13 @@
 
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngFor="let item of resep">
 
     <img src="../../assets/img/gambar.png"/>
 
     <ion-card-content>
       <ion-card-title>
-        Cake Manis Sedap {{rasa}}
+        {{item.judul}}
       </ion-card-title>
       <p>
         Es krim cokelat dengan campuran susu di dalamnya yang menjadikan es krim lembut dan mudah lumer di mulut.

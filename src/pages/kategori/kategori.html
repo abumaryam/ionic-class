@@ -12,9 +12,10 @@
   
 </ion-fab>
 <ion-list>
-    <button ion-item *ngFor="let item of kategori">
+    <button ion-item *ngFor="let item of kategori" (click)="detailKategori(item.id)">
       {{ item.nama_kategori }}
+      
     </button>
-  </ion-list>
+ </ion-list>
 
 </ion-content>

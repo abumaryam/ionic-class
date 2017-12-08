@@ -1,16 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Http, Headers, RequestOptions } from '@angular/http';
-
-
-
-/**
- * Generated class for the TambahPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams,} from 'ionic-angular';
+import { RestProvider } from '../../providers/rest/rest';
 
 @IonicPage()
 @Component({
@@ -18,23 +8,19 @@ import { Http, Headers, RequestOptions } from '@angular/http';
   templateUrl: 'tambah.html',
 })
 export class TambahPage {
-  
-  public formku : FormGroup;
-
-  constructor(public navCtrl: NavController, 
-    public http       : Http,
-    public NP         : NavParams,
-    public fb         : FormBuilder,
-    public toastCtrl  : ToastController
-  ) {
+  results: Array<any>;
+  public kategori = {
+    nama_kategori: ""
+  }
+  constructor(public navCtrl: NavController, public navParams: NavParams,public restProvider: RestProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TambahPage');
   }
-
-  saveEntry(){
-
-  }
+  onSubmit() {
+    this.restProvider.insertKategori(this.kategori.nama_kategori);
+    this.navCtrl.pop();
+  };
 
 }
