@@ -8,11 +8,11 @@
 
 
 <ion-content padding>
-	<ion-card *ngFor="let item of kategori">
+	<ion-card>
 
 	    <ion-card-content>
 	      <ion-card-title>
-	        {{item.nama_kategori}}
+	        {{kategori.nama_kategori}}
 	      </ion-card-title>
 	      <p>
 	        Ini dapat diisi dengan deskripsi kategori
@@ -21,15 +21,15 @@
 
 	    <ion-row no-padding>
 	      <ion-col>
-	        <button ion-button clear small color="success" icon-start>
+	        <button ion-button clear small color="success" icon-start (click)="ubahKategori(kategori.id)">
 	          <ion-icon name='star'></ion-icon>
 	          Edit
 	        </button>
 	      </ion-col>
 	     
 	      <ion-col text-right>
-	        <button ion-button clear small color="danger" icon-start>
-	          <ion-icon name='create'></ion-icon>
+	        <button ion-button clear small color="danger" icon-start (click)="deleteKategori(kategori.id)">
+	          <ion-icon name='trash'></ion-icon>
 	          Delete
 	        </button>
 	      </ion-col>

@@ -10,6 +10,7 @@ import { TentangPage } from '../pages/tentang/tentang';
 import { DetailPage } from '../pages/detail/detail';
 import { TambahPage } from '../pages/tambah/tambah';
 import { DetailkategoriPage } from '../pages/detailkategori/detailkategori';
+import { UbahkategoriPage } from '../pages/ubahkategori/ubahkategori';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,6 +31,7 @@ import { RestProvider } from '../providers/rest/rest';
     TabsPage,
     ProfilPage,
     DetailkategoriPage,
+    UbahkategoriPage,
     TambahPage
   ],
   imports: [
@@ -49,6 +51,7 @@ import { RestProvider } from '../providers/rest/rest';
     TabsPage,
     ProfilPage,
     DetailkategoriPage,
+    UbahkategoriPage,
     TambahPage
   ],
   providers: [

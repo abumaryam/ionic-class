@@ -66,9 +66,28 @@ export class RestProvider {
       });
   }
 
+  updateKategori(id,nama_kategori) {
+    let data = new URLSearchParams();
+    data.append('nama_kategori', nama_kategori);
+
+    this.httpdua.put(this.apiUrl+'/kategori/update/'+id, data)
+      .subscribe(data => {
+
+        let alert = this.alertCtrl.create({
+          title: 'Update',
+          subTitle: 'kategori berhasil diperbaharui.',
+          buttons: ['OK']
+        });
+        alert.present();
+
+      }, error => {
+        console.log(JSON.stringify(error));
+      });
+  }
+
   deleteKategori(id) {
     // this.http.delete('http://slimapp/students/delete/' + id)
-    this.http.delete(this.apiUrl+'/kategori/delete' + id)
+    this.http.delete(this.apiUrl+'/kategori/delete/' + id)
       .subscribe(id => {
 
         let alert = this.alertCtrl.create({
@@ -79,7 +98,7 @@ export class RestProvider {
         alert.present();
 
       }, error => {
-        console.log(JSON.stringify(error.json()));
+        console.log(JSON.stringify(error));
       });
   }
 
