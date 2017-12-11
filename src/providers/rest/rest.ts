@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 export class RestProvider {
 
   apiUrl = 'http://localhost/api/public/index.php/api';
+  // apiUrl = 'http://matanadi.xyz/public/index.php/api';
 
 
   constructor(public http: HttpClient,public httpdua: Http, public alertCtrl: AlertController) {

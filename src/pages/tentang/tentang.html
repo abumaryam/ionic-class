@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Tentang Aplikasi</ion-title>
+    <ion-title>Tentang Aplikasis</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,8 @@
 
 <ion-content padding>
 <h2>Ini adalah halaman tentang aplikasi</h2>
+
+<button ion-button color="dark" (click)="takePhoto()">Take Photo</button>
+	<img [src]="base64Image" *ngIf="base64Image" />
+
 </ion-content>

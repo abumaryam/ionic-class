@@ -18,10 +18,11 @@ export class UbahkategoriPage implements OnInit {
 
   	id:any; 
   	results: Array<any>;
-	public kategori = {
-		id:"",
-	    nama_kategori: ""
-	}
+    public kategori: any;
+    public kategorix: any;
+	// public kategori = {
+	//     nama_kategori: ""
+	// }
   	constructor(public navCtrl: NavController, 
   				public navParams: NavParams, 
   				public loadingCtrl: LoadingController, 
@@ -35,8 +36,8 @@ export class UbahkategoriPage implements OnInit {
 
 	      this.restProvider.getDetailKategori(this.id)
 	      .then(data => {
-	        this.kategori = data;
-	        console.log(this.kategori);
+	        this.kategorix = data;
+	        console.log(this.kategorix);
 	      });
 	      loader.dismiss();
 	 }
@@ -46,7 +47,7 @@ export class UbahkategoriPage implements OnInit {
   }
 
   onSubmit() {
-    this.restProvider.updateKategori(this.id,this.kategori.nama_kategori);
+    this.restProvider.updateKategori(this.id,this.kategorix.nama_kategori);
     this.navCtrl.pop();
   };
 

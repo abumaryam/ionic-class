@@ -12,10 +12,12 @@ import { UbahkategoriPage } from '../../pages/ubahkategori/ubahkategori';
 export class DetailkategoriPage implements OnInit {
 
 	id:any; 
-	public kategori = {
-		id:"",
-	    nama_kategori: ""
-	}
+  	kategori: any;
+
+	// public kategori:any;
+	// public kategori = {
+	//     nama_kategori: ""
+	// }
 	
     constructor(public navCtrl: NavController, 
     			public navParams: NavParams,
@@ -24,7 +26,17 @@ export class DetailkategoriPage implements OnInit {
     }
 
     ngOnInit(){
-	    this.refreshKategori(this.navParams.get('id'));
+	    // this.refreshKategori(this.navParams.get('id'));
+	    this.id = this.navParams.get('id');
+	    let loader = this.loadingCtrl.create({ content: 'Memuat kategori' });
+	    loader.present();
+
+	      this.restProvider.getDetailKategori(this.id)
+	      .then(data => {
+	        this.kategori = data;
+	        console.log(this.kategori);
+	      });
+	      loader.dismiss();
 	}
 
 	ionViewDidEnter() {
