@@ -115,6 +115,26 @@ export class RestProvider {
       });
   }
 
+  registerUser(username,password,email,name) {
+    // let data = new URLSearchParams();
+    // data.append('nama_kategori', nama_kategori);
+
+    // // this.http.post('http://slimapp/students/add', data)
+    // this.httpdua.post(this.apiUrl+'/kategori/add', data)
+    //   .subscribe(data => {
+
+    //     let alert = this.alertCtrl.create({
+    //       title: 'Added',
+    //       subTitle: nama_kategori+' added successfully.',
+    //       buttons: ['OK']
+    //     });
+    //     alert.present();
+
+    //   }, error => {
+    //     console.log(JSON.stringify(error));
+    //   });
+  }
+
 
 
 }

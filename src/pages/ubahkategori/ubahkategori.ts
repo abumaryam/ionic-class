@@ -14,7 +14,8 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
   selector: 'page-ubahkategori',
   templateUrl: 'ubahkategori.html',
 })
-export class UbahkategoriPage implements OnInit {
+// export class UbahkategoriPage implements OnInit {
+export class UbahkategoriPage {
 
   	id:any; 
   	results: Array<any>;
@@ -27,20 +28,22 @@ export class UbahkategoriPage implements OnInit {
   				public navParams: NavParams, 
   				public loadingCtrl: LoadingController, 
   				public restProvider: RestProvider) {
+
+      this.id = this.navParams.get('id');
+      let loader = this.loadingCtrl.create({ content: 'Memuat kategori' });
+      loader.present();
+
+        this.restProvider.getDetailKategori(this.id)
+        .then(data => {
+          this.kategori = data;
+          console.log('Ini adalah '+this.kategori.nama_kategori);
+        });
+        loader.dismiss();
   	}
 
-  	ngOnInit(){
-	    this.id = this.navParams.get('id');
-	    let loader = this.loadingCtrl.create({ content: 'Memuat kategori' });
-	    loader.present();
-
-	      this.restProvider.getDetailKategori(this.id)
-	      .then(data => {
-	        this.kategorix = data;
-	        console.log(this.kategorix);
-	      });
-	      loader.dismiss();
-	 }
+  	// ngOnInit(){
+	    
+	  //  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UbahkategoriPage');

@@ -11,6 +11,7 @@ import { DetailPage } from '../pages/detail/detail';
 import { TambahPage } from '../pages/tambah/tambah';
 import { DetailkategoriPage } from '../pages/detailkategori/detailkategori';
 import { UbahkategoriPage } from '../pages/ubahkategori/ubahkategori';
+import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,6 +35,7 @@ import { Camera } from '@ionic-native/camera';
     ProfilPage,
     DetailkategoriPage,
     UbahkategoriPage,
+    RegisterPage,
     TambahPage
   ],
   imports: [
@@ -54,6 +56,7 @@ import { Camera } from '@ionic-native/camera';
     ProfilPage,
     DetailkategoriPage,
     UbahkategoriPage,
+    RegisterPage,
     TambahPage
   ],
   providers: [
