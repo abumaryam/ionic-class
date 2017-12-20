@@ -52,6 +52,7 @@ export class RestProvider {
     data.append('nama_kategori', nama_kategori);
 
     // this.http.post('http://slimapp/students/add', data)
+    return new Promise(resolve => {
     this.httpdua.post(this.apiUrl+'/kategori/add', data)
       .subscribe(data => {
 
@@ -61,10 +62,13 @@ export class RestProvider {
           buttons: ['OK']
         });
         alert.present();
+        resolve(data);
 
       }, error => {
         console.log(JSON.stringify(error));
       });
+    });
+      
   }
 
   updateKategori(id,nama_kategori) {
@@ -116,23 +120,26 @@ export class RestProvider {
   }
 
   registerUser(username,password,email,name) {
-    // let data = new URLSearchParams();
-    // data.append('nama_kategori', nama_kategori);
+    let data = new URLSearchParams();
+    data.append('username', username);
+    data.append('password', password);
+    data.append('email', email);
+    data.append('name', name);
 
-    // // this.http.post('http://slimapp/students/add', data)
-    // this.httpdua.post(this.apiUrl+'/kategori/add', data)
-    //   .subscribe(data => {
+    // this.http.post('http://slimapp/students/add', data)
+    this.httpdua.post(this.apiUrl+'/user/add', data)
+      .subscribe(data => {
 
-    //     let alert = this.alertCtrl.create({
-    //       title: 'Added',
-    //       subTitle: nama_kategori+' added successfully.',
-    //       buttons: ['OK']
-    //     });
-    //     alert.present();
+        let alert = this.alertCtrl.create({
+          title: 'Added',
+          subTitle: username+' added successfully.',
+          buttons: ['OK']
+        });
+        alert.present();
 
-    //   }, error => {
-    //     console.log(JSON.stringify(error));
-    //   });
+      }, error => {
+        console.log(JSON.stringify(error));
+      });
   }
 
 
