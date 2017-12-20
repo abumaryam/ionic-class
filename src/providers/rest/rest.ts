@@ -127,19 +127,21 @@ export class RestProvider {
     data.append('name', name);
 
     // this.http.post('http://slimapp/students/add', data)
-    this.httpdua.post(this.apiUrl+'/user/add', data)
-      .subscribe(data => {
+    return new Promise(resolve => {
+      this.httpdua.post(this.apiUrl+'/user/add', data)
+        .subscribe(data => {
 
-        let alert = this.alertCtrl.create({
-          title: 'Added',
-          subTitle: username+' added successfully.',
-          buttons: ['OK']
+          let alert = this.alertCtrl.create({
+            title: 'Added',
+            subTitle: username+' added successfully.',
+            buttons: ['OK']
+          });
+          alert.present();
+          resolve(data);
+        }, error => {
+          console.log(JSON.stringify(error));
         });
-        alert.present();
-
-      }, error => {
-        console.log(JSON.stringify(error));
-      });
+    });
   }
 
 

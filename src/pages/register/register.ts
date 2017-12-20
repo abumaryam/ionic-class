@@ -33,9 +33,9 @@ export class RegisterPage {
     .then(data => {
           this.user = data;
           console.log(this.user);
-          storage.set('token', this.user.token);
-          storage.set('user_id', this.user.user_id);
-          storage.get('token').then((val) => {
+          this.storage.set('token', this.user.token);
+          this.storage.set('user_id', this.user.user_id);
+          this.storage.get('token').then((val) => {
             console.log('Tokennya adalah ', val);
           });
       });
