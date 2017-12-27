@@ -1,6 +1,6 @@
 {
   "name": "mobtab",
-  "app_id": "",
+  "app_id": "09138ee3",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

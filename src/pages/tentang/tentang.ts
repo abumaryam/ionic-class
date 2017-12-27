@@ -16,25 +16,27 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class TentangPage {
 
-  constructor(public camera: Camera, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private camera: Camera) {
   // constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TentangPage');
-  }
-  takePhoto(){
-	  	const options: CameraOptions = {
-		  	quality: 100,
-			destinationType: this.camera.DestinationType.DATA_URL,
-			encodingType: this.camera.EncodingType.JPEG,
-			mediaType: this.camera.MediaType.PICTURE
-		}
+   
+  public base64Image: string;
 
-		this.camera.getPicture(options).then((imageData) => {
-		 	let base64Image = 'data:image/jpeg;base64,' + imageData;
+
+  takePhoto(){
+  		const options: CameraOptions = {
+			  quality: 100,
+			  destinationType: this.camera.DestinationType.DATA_URL,
+			  encodingType: this.camera.EncodingType.JPEG,
+			  mediaType: this.camera.MediaType.PICTURE
+			}
+	  	this.camera.getPicture(options).then((imageData) => {
+		 // imageData is either a base64 encoded string or a file URI
+		 // If it's base64:
+		 this.base64Image = 'data:image/jpeg;base64,' + imageData;
 		}, (err) => {
-		
+		 // Handle error
 		});
 	}
 
